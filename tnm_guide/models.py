@@ -20,7 +20,8 @@ class Resource(models.Model):
 				default=MAKER_BRAND,
 				blank=True)
 	image = models.ImageField(upload_to=RandomFileName('resources_images'),
-							  default='media/default.png')
+							  default='media/default.png',
+							  blank=True)
 
 	def __str__(self):
  		return self.name
