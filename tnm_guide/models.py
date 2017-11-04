@@ -1,4 +1,5 @@
 from django.db import models
+from .helpers import RandomFileName
 
 class Resource(models.Model):
 	MAKER_BRAND = 'MB'
@@ -18,9 +19,10 @@ class Resource(models.Model):
 				choices=CATEGORY_CHOICES,
 				default=MAKER_BRAND,
 				blank=True)
+	image = models.ImageField(upload_to=RandomFileName('resources_images'),
+							  default='media/default.png')
 
 	def __str__(self):
  		return self.name
-
 
 # Create your models here.
