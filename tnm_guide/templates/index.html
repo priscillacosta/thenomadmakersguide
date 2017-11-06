@@ -1,1 +1,14 @@
-The Nomad Maker's Guide
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	The Nomad Maker's Guide
+{% for resource in resources %}
+	<h2>{{ resource.name }}</h2>
+{% endfor %}
+
+</body>
+</html>
