@@ -1,0 +1,25 @@
+.header {
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+h3 {
+  font-family: Montserrat;
+  text-transform: uppercase;
+  color: #333
+}
+h4 {
+  text-transform: lowercase;
+  color: #333;
+}
+.body-wrapper {
+  background-color: #F5F8FA;
+  padding-top: 60px;
+}
+.resource-img-container {
+  width: 260px;
+  height: 260px;
+  overflow: hidden;
+}
+.resource-img {
+  height: 260px;
+}
