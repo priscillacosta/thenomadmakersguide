@@ -1,14 +1,26 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<title>The Nomad Maker's Guide</title>
 </head>
 <body>
-	The Nomad Maker's Guide
-{% for resource in resources %}
-	<h2>{{ resource.name }}</h2>
-{% endfor %}
+	<div class="container">
+		<h1>The Nomad Maker's Guide</h1>
 
+		<div class="row">
+			{% for resource in resources %}
+			<div class="col-md-3">
+				<h3>{{ resource.name }}</h2>
+				<div style="width: 260px; height: 260px; overflow: hidden">
+				<img src="{{ resource.image.url }}" width="260px">
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
 </body>
 </html>
