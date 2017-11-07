@@ -22,7 +22,7 @@
 				<div class="col-md-3">
 					<h4>{{ resource.name }}</h4>
 					<div class="resource-img-container">
-					<img class="resource-img" src="https://images.unsplash.com/photo-1501983580222-e073379fe976?auto=format&fit=crop&w=1380&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D">
+						<img class="resource-img" src="{{ resource.image_url|default_if_none:'https://s3-eu-west-1.amazonaws.com/thenomadmaker/media/default.png' }}" />
 					</div>
 				</div>
 				{% endfor %}

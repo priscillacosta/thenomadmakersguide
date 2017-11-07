@@ -24,6 +24,10 @@ class Resource(models.Model):
 							  blank=True)
 
 	def __str__(self):
- 		return self.name
+		return self.name
 
+	@property
+	def image_url(self):
+		if self.image and hasattr(self.image, 'url'):
+			return self.image.url
 # Create your models here.
