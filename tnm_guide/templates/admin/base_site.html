@@ -3,6 +3,7 @@
 {% block title %}{{ title }} | The Nomad Maker{% endblock %}
 
 {% block extrastyle %}
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <style>
 	body.login {
@@ -11,6 +12,10 @@
 	#header {
 		background-color: #F5F8FA;
 		text-align: center;
+		color: #333;
+		padding-top: 50px;
+		height: 50px;
+
 	}
 	.login #header h1 a {
 		color: #333 !important;
@@ -35,9 +40,9 @@
 		padding: 1em 2em;
 	}
 	.button:active, input[type=submit]:active, input[type=button]:active, .button:focus, input[type=submit]:focus, input[type=button]:focus, .button:hover, input[type=submit]:hover, input[type=button]:hover {
-    	background: #FFF;
-    	border-color: #333 !important;
-    	padding: 1em 2em;
+		background: #FFF;
+		border-color: #333 !important;
+		padding: 1em 2em;
 	}
 
 	input, textarea, select, .form-row p, form .button {
@@ -45,8 +50,101 @@
 		color: #333 !important;
 	}
 
-</style>
-{% endblock %}
+	#branding h1, #branding h1 a:link, #branding h1 a:visited {
+		color: #333 !important;
+		font-family: Montserrat !important;
+		text-transform: uppercase;
+	}
+
+	.module caption, .inline-group h2 {
+		font-size: 12px;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		font-family: Montserrat !important;
+	}
+	a:link, a:visited {
+		color: #333 !important;
+		text-decoration: none;
+
+	}
+
+	#recent-actions-module {
+		background-color: #F5F8FA !important;
+	}
+
+	.module h2, .module caption, .inline-group h2 {
+		background: #F5F8FA;
+		color: #333 !important;
+	}
+
+	#user-tools a:hover {
+	border-bottom: 1px solid #333;
+	}
+	.button.default, input[type=submit].default, .submit-row input.default {
+		background: #FFF;
+		border: 1px solid #ccd6dd !important;
+		border-radius: 0px !important;
+		padding: 1em 2em;
+	}
+	.button.default:active, input[type=submit].default:active, .button.default:focus, input[type=submit].default:focus, .button.default:hover, input[type=submit].default:hover {
+		background: #FFF;
+		border-color: #333 !important;
+		padding: 1em 2em;
+	}
+	.submit-row input {
+	    height: 50px !important;
+	    line-height: 15px;
+	    margin: 0 0 0 5px;
+	}
+
+	div.breadcrumbs {
+		background: #fff !important;
+		color: #333;
+	}
+	input:focus, textarea:focus, select:focus {
+		outline: #333;
+		border: #333;
+		outline-offset: -2px;
+	}
+	.submit-row a.deletelink {
+	    background: #FFF !important;
+	    border-radius: 0px !important;
+	    color: #333;
+		border: 1px solid #ccd6dd !important;
+	}
+	.submit-row a.deletelink:focus, .submit-row a.deletelink:hover, .submit-row a.deletelink:active {
+		border: 1px solid #a41515 !important;
+	}
+	.delete-confirmation form input[type="submit"] {
+		color: #fff !important;
+	}
+
+	.delete-confirmation form .cancel-link {
+		background: #FFF;
+		border-color: #ccd6dd !important;
+		padding: 1em 2em;
+	}
+	.delete-confirmation form .cancel-link:active, .delete-confirmation form .cancel-link:focus, .delete-confirmation form .cancel-link:hover {
+		background: #FFF;
+		border-color: #333 !important;
+		padding: 1em 2em;
+	}
+	.object-tools a.addlink {
+		border-radius: 1px;
+	}
+	.object-tools a:link, .object-tools a:visited {
+		background-color: #e2e2e2;
+	}
+
+	.object-tools a:focus, .object-tools a:hover {
+		background-color: #b2b2b2;
+	}
+	.object-tools a {
+	    border-radius: 1px;
+	}
+	</style>
+
+	{% endblock %}
 
 {% block branding %}
 <h1 id="site-name"><a href="{% url 'admin:index' %}">The Nomad Maker's Guide</a></h1>
