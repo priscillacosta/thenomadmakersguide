@@ -10,29 +10,32 @@
 	<title>The Nomad Maker's Guide</title>
 </head>
 <body>
-	<div class="container">
-		<div class="header">
-			<h3>The Nomad Maker's Guide</h3>
-		</div>
-	</div>
-	<div class="body-wrapper">
 		<div class="container">
-			<div class="row">
-				{% for resource in resources %}
-				<div class="col-md-3">
-					<h4>{{ resource.name }}</h4>
-					<div class="resource-img-container">
-						<img class="resource-img"
-						src="{{ resource.image_url|default_if_none:'https://s3-eu-west-1.amazonaws.com/thenomadmaker/media/default.png' }}" />
-					</div>
-				</div>
-				{% endfor %}
+			<div class="header">
+					<h3>The Nomad Maker's Guide</h3>
+					<a style="text-decoration: underline; color: #333;" href="{% url 'admin:index' %}">Admin</a>
 			</div>
 		</div>
-	</div>
-	<div class="container">
-		<div class="footer">
-			<h3>The Nomad Maker's Guide</h3>
+
+			<div class="body-wrapper">
+				<div class="container">
+					<div class="row">
+						{% for resource in resources %}
+						<div class="col-md-3">
+							<h4>{{ resource.name }}</h4>
+							<div class="resource-img-container">
+								<img class="resource-img"
+								src="{{ resource.image_url|default_if_none:'https://s3-eu-west-1.amazonaws.com/thenomadmaker/media/default.png' }}" />
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		<div class="container">
+			<div class="footer">
+				<h3>The Nomad Maker's Guide</h3>
+			</div>
 		</div>
 	</div>
 </body>
