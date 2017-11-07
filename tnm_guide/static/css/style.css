@@ -23,3 +23,8 @@ h4 {
 .resource-img {
   height: 260px;
 }
+.footer {
+  padding-top: 600px;
+  margin-top: 60px;
+  text-align: center
+}

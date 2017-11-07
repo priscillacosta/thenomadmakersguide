@@ -1,0 +1,55 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | The Nomad Maker{% endblock %}
+
+{% block extrastyle %}
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<style>
+	body.login {
+		background-color: #FFF !important;
+	}
+	#header {
+		background-color: #F5F8FA;
+		text-align: center;
+	}
+	.login #header h1 a {
+		color: #333 !important;
+		font-family: Montserrat;
+		text-transform: uppercase;
+		padding-top: 20px;
+	}
+	.login #container {
+		border: 1px solid #ccd6dd !important;
+		border-radius: 0px !important;
+	}
+
+	input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], textarea, select, .vTextField {
+		border: 1px solid #ccd6dd !important;
+		border-radius: 0px !important;
+	}
+
+	.button, input[type=submit], input[type=button], .submit-row input, a.button {
+		background: #FFF;
+		border: 1px solid #ccd6dd !important;
+		border-radius: 0px !important;
+		padding: 1em 2em;
+	}
+	.button:active, input[type=submit]:active, input[type=button]:active, .button:focus, input[type=submit]:focus, input[type=button]:focus, .button:hover, input[type=submit]:hover, input[type=button]:hover {
+    	background: #FFF;
+    	border-color: #333 !important;
+    	padding: 1em 2em;
+	}
+
+	input, textarea, select, .form-row p, form .button {
+		font-family: Montserrat !important;
+		color: #333 !important;
+	}
+
+</style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">The Nomad Maker's Guide</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
