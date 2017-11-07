@@ -30,11 +30,42 @@
 						</div>
 						{% endfor %}
 					</div>
+					<ul class="pagination">
+				    	{% if resources.has_previous %}
+				    		<li>
+				    			<a href="?page={{ resources.previous_page_number }}">&laquo;</a>
+				    		</li>
+				    		{% if resources.number > 2 %}
+        		    		<li>
+        		    			<span>...</span>
+        		    		</li>
+        		    		{% endif %}
+				    		<li>
+        		    			<a href="?page={{ resources.previous_page_number }}">{{ resources.previous_page_number }}</a>
+        		    		</li>
+       					{% endif %}
+
+						<li class="active"><span>{{ resources.number }}</span></li>
+				        {% if resources.has_next %}
+        		    		<li>
+        		    			<a href="?page={{ resources.next_page_number }}">{{ resources.next_page_number }}</a>
+        		    		</li>
+        		    		{% if resources.next_page_number < resources.end_index %}
+        		    		<li>
+        		    			<span>...</span>
+        		    		</li>
+        		    		{% endif %}
+        		    		<li>
+        		    			<a href="?page={{ resources.next_page_number }}">&raquo;</a>
+        		    		</li>
+       					{% endif %}
+					</ul>
+
 				</div>
 			</div>
 		<div class="container">
 			<div class="footer">
-				<h3>The Nomad Maker's Guide</h3>
+				<h5>The Nomad Maker's Guide</h5>
 			</div>
 		</div>
 	</div>
