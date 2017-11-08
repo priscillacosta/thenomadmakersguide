@@ -7,7 +7,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 def index(request):
 	resources_list = Resource.objects.all()
-	paginator = Paginator(resources_list, 24)
+	paginator = Paginator(resources_list, 40)
 	page = request.GET.get('page')
 
 	try:

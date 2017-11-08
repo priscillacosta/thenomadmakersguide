@@ -7,67 +7,53 @@
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
 	<title>The Nomad Maker's Guide</title>
 </head>
 <body>
-		<div class="container">
-			<div class="header">
-					<h3>The Nomad Maker's Guide</h3>
-					<a style="text-decoration: underline; color: #333;" href="{% url 'admin:index' %}">Admin</a>
-			</div>
+	<div class="container">
+		<div class="header">
+			<h3>The Nomad Maker's Guide</h3>
+			<a style="text-decoration: underline; color: #333;" href="{% url 'admin:index' %}">
+				Admin
+			</a>
 		</div>
-
-			<div class="body-wrapper">
-				<div class="container">
-					<div class="row">
-						{% for resource in resources %}
+	</div>
+	<div class="body-wrapper">
+		<div class="container">
+			<div class="infinite-container">
+				<div class="row infinite-item">
+					{% for resource in resources %}
+					<div class="infinite-item">
 						<div class="col-md-3">
 							<h4>{{ resource.name }}</h4>
 							<div class="resource-img-container">
 								<img class="resource-img"
-								src="{{ resource.image_url|default_if_none:'https://s3-eu-west-1.amazonaws.com/thenomadmaker/media/default.png' }}" />
+								src="{{ resource.image_url|default_if_none:'http://lorempixel.com/260/260/' }}" />
 							</div>
 						</div>
-						{% endfor %}
 					</div>
-					<ul class="pagination">
-				    	{% if resources.has_previous %}
-				    		<li>
-				    			<a href="?page={{ resources.previous_page_number }}">&laquo;</a>
-				    		</li>
-				    		{% if resources.number > 2 %}
-        		    		<li>
-        		    			<span>...</span>
-        		    		</li>
-        		    		{% endif %}
-				    		<li>
-        		    			<a href="?page={{ resources.previous_page_number }}">{{ resources.previous_page_number }}</a>
-        		    		</li>
-       					{% endif %}
-
-						<li class="active"><span>{{ resources.number }}</span></li>
-				        {% if resources.has_next %}
-        		    		<li>
-        		    			<a href="?page={{ resources.next_page_number }}">{{ resources.next_page_number }}</a>
-        		    		</li>
-        		    		{% if resources.next_page_number < resources.end_index %}
-        		    		<li>
-        		    			<span>...</span>
-        		    		</li>
-        		    		{% endif %}
-        		    		<li>
-        		    			<a href="?page={{ resources.next_page_number }}">&raquo;</a>
-        		    		</li>
-       					{% endif %}
-					</ul>
-
+					{% endfor %}
 				</div>
+				{% if resources.has_next %}
+   				<a class="infinite-more-link" href="?page={{ resources.next_page_number }}">More</a>
+ 				{% endif %}
 			</div>
+		</div>
+		</div>
 		<div class="container">
 			<div class="footer">
 				<h5>The Nomad Maker's Guide</h5>
 			</div>
 		</div>
 	</div>
+	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'js/infinite.min.js' %}"></script>
+	<script>
+		var infinite = new Waypoint.Infinite({
+	    	element: $('.infinite-container')[0],
+	    });
+	</script>
 </body>
 </html>
