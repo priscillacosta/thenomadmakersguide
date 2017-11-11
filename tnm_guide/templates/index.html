@@ -21,8 +21,8 @@
 	</div>
 	<div class="body-wrapper">
 		<div class="container">
-			<div class="infinite-container">
-				<div class="row infinite-item">
+			<div class="row infinite-container">
+				<div class="infinite-item">
 					{% for resource in resources %}
 					<div class="infinite-item">
 						<div class="col-md-3">
@@ -34,10 +34,11 @@
 						</div>
 					</div>
 					{% endfor %}
+					{% if resources.has_next %}
+	   					<a class="infinite-more-link" href="?page={{ resources.next_page_number }}"></a>
+	 				{% endif %}
 				</div>
-				{% if resources.has_next %}
-   				<a class="infinite-more-link" href="?page={{ resources.next_page_number }}"></a>
- 				{% endif %}
+
 			</div>
 		</div>
 		</div>
