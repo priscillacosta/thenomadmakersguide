@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="container detail-container">
+	<div class="row">
+		<div class="col-md-4">
+			<img src="{{ resource.image.url }}" class="detail-image">
+		</div>
+		<div class="col-md-8 panel panel-body detail-text">
+			<h2>{{ resource.name }}</h2>
+			<p><a target="_blank" href="{{ resource.url }}">{{ resource.url }}</a></p>
+			<p>{{ resource.local }}</p>
+
+		</div>
+	</div>
+
+</div>
+{% endblock %}

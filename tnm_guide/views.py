@@ -17,3 +17,7 @@ def index(request):
 	except EmptyPage:
 		resources = paginator.page(paginator.num_pages)
 	return render(request, 'index.html', {'resources' : resources})
+
+def detail(request, resource_id):
+	resource = Resource.objects.get(id=resource_id)
+	return render(request, 'detail.html', {'resource' : resource})

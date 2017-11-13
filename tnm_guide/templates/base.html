@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+	<title>The Nomad Maker's Guide</title>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h3>The Nomad Maker's Guide</h3>
+			<a style="text-decoration: underline; color: #333;" href="{% url 'admin:index' %}">
+				Admin
+			</a>
+		</div>
+	</div>
+	<div class="body-wrapper">
+{% block content %}
+{% endblock %}
+
+			</div>
+		</div>
+		<div class="container">
+			<div class="footer">
+				<h5>The Nomad Maker's Guide</h5>
+			</div>
+		</div>
+	</div>
+	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'js/infinite.min.js' %}"></script>
+	<script>
+		var infinite = new Waypoint.Infinite({
+	    	element: $('.infinite-container')[0],
+	    });
+	</script>
+</body>
+</html>
