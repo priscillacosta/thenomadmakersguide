@@ -6,13 +6,19 @@
 					{% for resource in resources %}
 					<div class="infinite-item">
 						<div class="col-md-3">
-							<h4>{{ resource.name }}</h4>
-							<div class="resource-img-container">
-								<a href="/{{ resource.id }}/">
-								<img class="resource-img"
-								src="{{ resource.image_url|default_if_none:'http://lorempixel.com/260/260/' }}" />
-								</a>
-							</div>
+							<figure>
+
+									<div class="resource-img-container">
+										<a href="/{{ resource.id }}/">
+										<img class="resource-img"
+										src="{{ resource.image_url|default_if_none:'http://www.clker.com/cliparts/N/W/I/R/v/V/baby-pink-square-md.png' }}" />
+										</a>
+									</div>
+									<figcaption>
+										<h4>{{ resource.name }}</h4>
+										<span>{{ resource.local }}</span>
+									</figcaption>
+							</figure>
 						</div>
 					</div>
 					{% endfor %}
