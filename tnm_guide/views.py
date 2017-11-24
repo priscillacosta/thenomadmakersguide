@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 def index(request):
-	resources_list = Resource.objects.all()
+	resources_list = Resource.objects.all().order_by('?')
 	paginator = Paginator(resources_list, 40)
 	page = request.GET.get('page')
 

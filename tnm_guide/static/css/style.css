@@ -61,6 +61,7 @@ figcaption {
   transform: translateY(20%);
   transition: transform 0.4s, opacity 0.1s 0.3s;
 }
+
 figure:hover figcaption,
 figure.cs-hover figcaption {
   opacity: 1;
